@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HalloWedding by Cass and Mia</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 80px 20px;
+        background-color: #333;
+        color: #fff;
+        background-image: url(./images/background-1.jpg);
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      h1 {
+        color: #d35400;
+        margin-top: 0;
+      }
+      section {
+        background: #00000088;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 0 auto 40px auto;
+        width: 50%;
+        min-width: 300px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      section.grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      img.preview {
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Welcome to HalloWedding!</h1>
+      <p>This is the official wedding website for Cass and Mia.</p>
+    </section>
+    <section>
+      <h2>Event Details</h2>
+      <p>Date: October 31, 2026</p>
+      <p>Location: Haunted Castle, Spookyville</p>
+      <p>Time: 5:00 PM - 11:00 PM</p>
+      <p>Attire: Costumes</p>
+    </section>
+
+    <section>
+      <h2>RSVP</h2>
+      <p>Please RSVP by October 1, 2026.</p>
+    </section>
+
+    <section class="grid">
+      <img src="./images/skull-lamp.jpg" alt="Skull Lamp" class="preview" />
+      <img
+        src="./images/cass-and-mia-1.jpg"
+        alt="Cass and Mia"
+        class="preview"
+      />
+      <img src="./images/mia-leopard.jpg" alt="Mia Leopard" class="preview" />
+    </section>
+  </body>
+</html>
