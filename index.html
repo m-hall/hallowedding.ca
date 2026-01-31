@@ -72,7 +72,8 @@
   <body>
     <section>
       <h1>Welcome to HalloWedding!</h1>
-      <p>This is the official wedding website for Cass and Mia.</p>
+      <p>Join us for a spooky celebration of love on October 31, 2026!</p>
+      <p id="eta"></p>
     </section>
     <section>
       <h2>Reception Details</h2>
@@ -106,5 +107,42 @@
         ><img src="./images/mia-leopard.jpg" alt="Mia Leopard" class="preview"
       /></a>
     </section>
+
+    <script type="text/javascript">
+      let weddingDate = new Date("2026-10-31T17:00:00");
+      let etaElement = document.getElementById("eta");
+      let etaInterval;
+
+      function updateETA() {
+        let now = new Date();
+        let diff = weddingDate - now;
+
+        if (diff <= 0) {
+          let hours = Math.floor(Math.abs((diff / (1000 * 60 * 60)) % 24));
+
+          if (hours < 6) {
+            etaElement.textContent =
+              "The wedding is currently ongoing, why aren't you partying?!";
+          } else {
+            etaElement.remove();
+          }
+
+          clearInterval(etaInterval);
+          return;
+        }
+
+        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        let minutes = Math.floor((diff / (1000 * 60)) % 60);
+        let seconds = Math.floor((diff / 1000) % 60);
+
+        etaElement.textContent = `${days} days, ${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")} until the wedding!`;
+      }
+
+      window.addEventListener("load", () => {
+        updateETA();
+        etaInterval = setInterval(updateETA, 1000);
+      });
+    </script>
   </body>
 </html>
