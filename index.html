@@ -7,19 +7,14 @@
     <link href="https://fonts.cdnfonts.com/css/spooky-okey" rel="stylesheet" />
     <style>
       body {
-        /* font-family: "Spooky Okey", Arial, sans-serif; */
-        font-family: Arial, sans-serif;
+        font-family: Verdana, Arial, sans-serif;
+        color: #eee;
         margin: 80px 20px;
         background-color: #333;
-        color: #fff;
         background-image: url(./images/background-1.jpg);
         background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
-      }
-      h1 {
-        color: #d35400;
-        margin-top: 0;
       }
       h1,
       h2,
@@ -27,8 +22,10 @@
       h4,
       h5,
       h6 {
-        font-family: "Spooky Okey", Arial, sans-serif;
+        font-family: "Spooky Okey", Verdana, Arial, sans-serif;
+        color: #d35400;
         text-shadow: 2px 2px 4px #000;
+        margin-top: 0;
       }
       section {
         background: #00000088;
@@ -48,6 +45,23 @@
         width: 100%;
         border-radius: 8px;
       }
+      a {
+        color: #d79860;
+        text-decoration: none;
+      }
+      a.button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #d35400;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+      a.button:hover {
+        background-color: #e67e22;
+      }
       @media (min-width: 900px) {
         body {
           margin: 80px 10%;
@@ -61,16 +75,21 @@
       <p>This is the official wedding website for Cass and Mia.</p>
     </section>
     <section>
-      <h2>Event Details</h2>
+      <h2>Reception Details</h2>
       <p>Date: October 31, 2026</p>
-      <p>Location: Haunted Castle, Spookyville</p>
+      <p>
+        Location:
+        <a
+          href="https://www.google.com/maps/place/Playback+Ottawa/@45.3689989,-75.6636887,15z/data=!4m6!3m5!1s0x4cce093710a9b2d7:0x8dba575ffa33952e!8m2!3d45.3691214!4d-75.6635587!16s%2Fg%2F11fhr0qxgb?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D"
+          >Playback Ottawa</a
+        >
+      </p>
       <p>Time: 5:00 PM - 11:00 PM</p>
       <p>Attire: Costumes</p>
-    </section>
-
-    <section>
-      <h2>RSVP</h2>
       <p>Please RSVP by October 1, 2026.</p>
+      <a class="button" href="https://forms.gle/75sNDYsBHE3v9kKW8"
+        >Click here to RSVP</a
+      >
     </section>
 
     <section class="image-library">
