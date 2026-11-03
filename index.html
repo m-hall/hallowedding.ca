@@ -90,26 +90,11 @@
         <img src="./images/favicon.png" />
       </h1>
       <p>
-        Join <span class="highlight">Cass</span> and
-        <span class="highlight">Mia</span> for an ooky spooky celebration of
-        love on October 31, 2026!
+        Thank you for joining us in celebrating the union of
+        <span class="highlight">Cass</span> and
+        <span class="highlight">Mia</span>
       </p>
-      <p id="eta"></p>
     </section>
-    <section>
-      <h2>Reception Details</h2>
-      <p>Date: October 31, 2026</p>
-      <p>Time: 5:00 PM - 11:00 PM</p>
-      <p>
-        Location:
-        <a
-          href="https://www.google.com/maps/place/Playback+Ottawa/@45.3689989,-75.6636887,15z/data=!4m6!3m5!1s0x4cce093710a9b2d7:0x8dba575ffa33952e!8m2!3d45.3691214!4d-75.6635587!16s%2Fg%2F11fhr0qxgb?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D"
-          >Playback Ottawa</a
-        >
-      </p>
-      <p>Attire: Costumes</p>
-    </section>
-
     <section class="gallery">
       <a href="./images/skull-lamp.jpg"
         ><img src="./images/skull-lamp.jpg" alt="Skull Lamp" class="preview"
@@ -133,42 +118,5 @@
         ><img src="./images/answer.jpg" alt="Answer (Yes)" class="preview"
       /></a>
     </section>
-
-    <script type="text/javascript">
-      let receptionDate = new Date("2026-10-31T17:00:00");
-      let etaElement = document.getElementById("eta");
-      let etaInterval;
-
-      function updateETA() {
-        let now = new Date();
-        let diff = receptionDate - now;
-
-        if (diff <= 0) {
-          let hours = Math.floor(Math.abs((diff / (1000 * 60 * 60)) % 24));
-
-          if (hours < 6) {
-            etaElement.textContent =
-              "The reception is currently ongoing, why aren't you partying?!";
-          } else {
-            etaElement.remove();
-          }
-
-          clearInterval(etaInterval);
-          return;
-        }
-
-        let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        let hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        let minutes = Math.floor((diff / (1000 * 60)) % 60);
-        let seconds = Math.floor((diff / 1000) % 60);
-
-        etaElement.textContent = `${days} days, ${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")} until the reception!`;
-      }
-
-      window.addEventListener("load", () => {
-        updateETA();
-        etaInterval = setInterval(updateETA, 1000);
-      });
-    </script>
   </body>
 </html>
