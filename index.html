@@ -76,6 +76,34 @@
       a.button:hover {
         background-color: #e67e22;
       }
+      nav.tabs {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        max-width: 900px;
+        margin: 0 auto 20px auto;
+      }
+      nav.tabs a {
+        padding: 10px 20px;
+        background: #00000088;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+      nav.tabs a.active {
+        background-color: #d35400;
+        color: #fff;
+      }
+      .tab-panel[hidden] {
+        display: none;
+      }
+      ul.credits {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul.credits li {
+        margin: 12px 0;
+      }
       @media (min-width: 900px) {
         body {
           margin: 80px 10%;
@@ -95,28 +123,71 @@
         <span class="highlight">Mia</span>
       </p>
     </section>
-    <section class="gallery">
-      <a href="./images/skull-lamp.jpg"
-        ><img src="./images/skull-lamp.jpg" alt="Skull Lamp" class="preview"
-      /></a>
-      <a href="./images/cass-and-mia-1.jpg"
-        ><img
-          src="./images/cass-and-mia-1.jpg"
-          alt="Cass and Mia"
-          class="preview"
-      /></a>
-      <a href="./images/mia-leopard.jpg"
-        ><img src="./images/mia-leopard.jpg" alt="Mia Leopard" class="preview"
-      /></a>
-      <a href="./images/proposal.jpg"
-        ><img src="./images/proposal.jpg" alt="Proposal" class="preview"
-      /></a>
-      <a href="./images/question.jpg"
-        ><img src="./images/question.jpg" alt="Question" class="preview"
-      /></a>
-      <a href="./images/answer.jpg"
-        ><img src="./images/answer.jpg" alt="Answer (Yes)" class="preview"
-      /></a>
-    </section>
+    <nav class="tabs">
+      <a href="#photos" data-tab="photos">Photos</a>
+      <a href="#credits" data-tab="credits">Credits</a>
+    </nav>
+
+    <div id="photos" class="tab-panel">
+      <section class="gallery">
+        <a href="./images/skull-lamp.jpg"
+          ><img src="./images/skull-lamp.jpg" alt="Skull Lamp" class="preview"
+        /></a>
+        <a href="./images/cass-and-mia-1.jpg"
+          ><img
+            src="./images/cass-and-mia-1.jpg"
+            alt="Cass and Mia"
+            class="preview"
+        /></a>
+        <a href="./images/mia-leopard.jpg"
+          ><img src="./images/mia-leopard.jpg" alt="Mia Leopard" class="preview"
+        /></a>
+        <a href="./images/proposal.jpg"
+          ><img src="./images/proposal.jpg" alt="Proposal" class="preview"
+        /></a>
+        <a href="./images/question.jpg"
+          ><img src="./images/question.jpg" alt="Question" class="preview"
+        /></a>
+        <a href="./images/answer.jpg"
+          ><img src="./images/answer.jpg" alt="Answer (Yes)" class="preview"
+        /></a>
+      </section>
+    </div>
+
+    <div id="credits" class="tab-panel" hidden>
+      <section>
+        <h2>Credits</h2>
+        <ul class="credits">
+          <li>
+            Venue:
+            <a
+              href="https://www.google.com/maps/place/Playback+Ottawa/@45.3689989,-75.6636887,15z/data=!4m6!3m5!1s0x4cce093710a9b2d7:0x8dba575ffa33952e!8m2!3d45.3691214!4d-75.6635587!16s%2Fg%2F11fhr0qxgb?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D"
+              >Playback Ottawa</a
+            >
+          </li>
+          <li>Caterer: TBD</li>
+          <li>Baker: TBD</li>
+        </ul>
+      </section>
+    </div>
+
+    <script type="text/javascript">
+      const tabs = ["photos", "credits"];
+
+      function showTab() {
+        let name = location.hash.slice(1);
+        if (!tabs.includes(name)) name = tabs[0];
+
+        for (const tab of tabs) {
+          document.getElementById(tab).hidden = tab !== name;
+          document
+            .querySelector(`nav.tabs a[data-tab="${tab}"]`)
+            .classList.toggle("active", tab === name);
+        }
+      }
+
+      window.addEventListener("hashchange", showTab);
+      showTab();
+    </script>
   </body>
 </html>
