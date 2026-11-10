@@ -3,6 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # Nothing on the site reads these, so pushes that only touch them skip the deploy.
+    paths-ignore:
+      - README.md
+      - AGENTS.md
+      - LICENSE
+      - .gitattributes
+      - scripts/**
   workflow_dispatch:
 
 permissions:
@@ -22,9 +29,16 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      # Images are stored in Git LFS; without pulling them Pages would serve pointer files.
+      # The LFS objects are cached so each run only downloads images that are new or changed.
+      - id: lfs
+        run: echo "hash=$(git lfs ls-files --long | cut -d' ' -f1 | sort | sha256sum | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
         with:
-          # Images are stored in Git LFS; without this Pages would serve pointer files.
-          lfs: true
+          path: .git/lfs
+          key: lfs-${{ steps.lfs.outputs.hash }}
+          restore-keys: lfs-
+      - run: git lfs pull
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
