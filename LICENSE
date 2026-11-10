@@ -1,0 +1,55 @@
+This repository contains two kinds of material under different terms.
+
+===============================================================================
+1. Code — MIT License
+===============================================================================
+
+Applies to everything in this repository EXCEPT the contents of the `images/`
+directory (including `images/thumbnails/`): the HTML, CSS, JavaScript, scripts,
+workflows and documentation.
+
+Copyright (c) 2026 Mia Hall
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+===============================================================================
+2. Images — All rights reserved
+===============================================================================
+
+Applies to every file in the `images/` directory, including
+`images/thumbnails/`, and to any copy of those files served from
+https://hallowedding.ca.
+
+The images are NOT covered by the MIT License above and are not licensed for
+any use. All rights are reserved by their respective copyright holders. Without
+prior written permission from the copyright holders you may not copy,
+reproduce, redistribute, publish, modify, create derivative works from, or
+otherwise use the images, for any purpose, commercial or non-commercial.
+
+No AI training. The images may not be used to train, fine-tune, evaluate or
+otherwise develop any machine learning or artificial intelligence model or
+system, and may not be collected, scraped or included in any dataset for that
+purpose. This is an express reservation of rights against text and data mining,
+including under Article 4(3) of Directive (EU) 2019/790.
+
+Viewing the images in a web browser as part of visiting
+https://hallowedding.ca is permitted.
+
+Some images are third-party material credited in README.md; those remain the
+property of their respective owners and are not licensed by this repository.
